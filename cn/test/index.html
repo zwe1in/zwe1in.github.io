@@ -142,7 +142,7 @@
   <link rel="canonical" href="https://zwe1in.github.io/cn/test/">
   <title>
     
-      either thin | or die
+      struct union enum介绍 - either thin | or die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -352,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url(''); */
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -389,12 +389,14 @@
           <div class="post-heading">
             <div class="tags">
               
+              <a class="tag" href="/tags/#struct union enum" title="struct union enum">struct union enum</a>
+              
             </div>
-            <h1></h1>
+            <h1>struct union enum介绍</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by zw on
-              2022-06-19
+              2022-06-20
             </span>
 
 
@@ -590,7 +592,7 @@ $$</p>
           
           
           <li class="next">
-            <a href="/cn/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+            <a href="/struct-union-enum/struct union enum/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -639,7 +641,7 @@ $$</p>
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=&body=Hi,I found this website and thought you might like it https://zwe1in.github.io/cn/test/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=struct union enum介绍&body=Hi,I found this website and thought you might like it https://zwe1in.github.io/cn/test/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -674,7 +676,7 @@ $$</p>
       repo: '',
       owner: '',
       admin: '',
-      id: 'Sun Jun 19 2022 22:15:36 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Mon Jun 20 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -722,6 +724,17 @@ $$</p>
       <!-- Catalog: Tabe of Content -->
       <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Welcome to StackEdit!</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Files</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Create-files-and-folders"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Create files and folders</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Switch-to-another-file"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Switch to another file</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Rename-a-file"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Rename a file</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Delete-a-file"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">Delete a file</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Export-a-file"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">Export a file</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Synchronization</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Open-a-file"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Open a file</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Save-a-file"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Save a file</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Synchronize-a-file"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">Synchronize a file</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Manage-file-synchronization"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">Manage file synchronization</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Publication</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Publish-a-File"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">Publish a File</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Update-a-publication"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">Update a publication</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Manage-file-publication"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">Manage file publication</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Markdown extensions</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#SmartyPants"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">SmartyPants</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#KaTeX"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">KaTeX</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#UML-diagrams"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">UML diagrams</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
 
 
       <!-- Sidebar Container -->
@@ -738,6 +751,8 @@ $$</p>
             <a href="/tags/">特色标签</a>
           </h5>
           <div class="tags">
+            
+            <a class="tag" href="/tags/#struct union enum" title="struct union enum">struct union enum</a>
             
           </div>
         </section>
