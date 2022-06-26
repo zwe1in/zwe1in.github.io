@@ -489,11 +489,11 @@
 <p>联合体对象的创建跟结构体相似，我们接下来通过代码来理解一下union的使用和它的特性(所有成员共同享用一段内存)</p>
 <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> book&#123;</span><br><span class="line">	<span class="keyword">int</span> page; <span class="comment">// 4字节</span></span><br><span class="line">	<span class="keyword">short</span> price; <span class="comment">// 2字节</span></span><br><span class="line">	<span class="keyword">char</span> <span class="keyword">id</span>; <span class="comment">// 1字节</span></span><br><span class="line">&#125; b1;</span><br><span class="line"><span class="comment">// 所占最大内存为page，所以book的对象占4个字节</span></span><br><span class="line">b1.id = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">b1.price = <span class="number">20</span>；</span><br><span class="line">b1.page = <span class="number">200000</span>;</span><br></pre></td></tr></table></figure>
 <p>经过一轮赋值操作，b1的内存分配变化如图所示：<br>
-<img src="union_store1.png" alt=""></p>
+<img src="union_store1.png" alt="union_store1"></p>
 <p>union对象每次的成员使用，都会对从它的首地址开始，重新存入新的值</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">book</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">		<span class="keyword">int</span> yuan;</span><br><span class="line">		<span class="keyword">int</span> dollar;</span><br><span class="line">		<span class="keyword">int</span> yan;</span><br><span class="line">		<span class="keyword">int</span> pound;</span><br><span class="line">	&#125; price;</span><br><span class="line">&#125; b;</span><br><span class="line"></span><br><span class="line">b.price.yuan = <span class="number">50</span>;</span><br><span class="line">b.price.dollar = <span class="number">6</span>;</span><br><span class="line">b.price.yan = <span class="number">1000</span>;</span><br><span class="line">b.price.pound = <span class="number">5</span>;</span><br><span class="line">std::cout &lt;&lt; b.price.yuan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.dollar &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.yan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.pound &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">b.id = <span class="number">2</span>;</span><br><span class="line">std::cout &lt;&lt; b.price.yuan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.dollar &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.yan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.pound &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
-<p><img src="union_store2.png" alt=""><br>
-<img src="union_run.png" alt=""><br>
+<p><img src="union_store2.png" alt="union_store2"><br>
+<img src="union_run.png" alt="union_run"><br>
 上面的输出结果可以看到，每次新赋值一个成员，都会从起始地址开始赋值并覆盖该地址原有的值。</p>
 
 
@@ -503,7 +503,7 @@
           
           
           <li class="next">
-            <a href="/struct-union-enum/struct union enum/" data-toggle="tooltip" data-placement="top" title="">Next Post &rarr;</a>
+            <a href="/cn/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
           </li>
           
         </ul>

@@ -9,13 +9,6 @@
   </url>
   
   <url>
-    <loc>https://zwe1in.github.io/struct-union-enum/struct%20union%20enum/</loc>
-    
-    <lastmod>2022-06-19</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zwe1in.github.io/tags/index.html</loc>
     
     <lastmod>2022-04-20</lastmod>
@@ -67,7 +60,7 @@
 
   <url>
     <loc>https://zwe1in.github.io/</loc>
-    <lastmod>2022-06-20</lastmod>
+    <lastmod>2022-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,14 +68,14 @@
   
   <url>
     <loc>https://zwe1in.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-06-20</lastmod>
+    <lastmod>2022-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://zwe1in.github.io/tags/struct-union-enum/</loc>
-    <lastmod>2022-06-20</lastmod>
+    <lastmod>2022-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -91,14 +84,14 @@
   
   <url>
     <loc>https://zwe1in.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2022-06-20</lastmod>
+    <lastmod>2022-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://zwe1in.github.io/categories/struct-union-enum/</loc>
-    <lastmod>2022-06-20</lastmod>
+    <lastmod>2022-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
