@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://zwe1in.github.io/cn/struct_union_enum/">
+  <link rel="canonical" href="https://zwe1in.github.io/cn/const/">
   <title>
     
-      struct union enum介绍 - either thin | or die
+      const 关键字 - either thin | or die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -389,14 +389,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#struct union enum" title="struct union enum">struct union enum</a>
+              <a class="tag" href="/tags/#const 关键字" title="const 关键字">const 关键字</a>
               
             </div>
-            <h1>struct union enum介绍</h1>
+            <h1>const 关键字</h1>
             <h2 class="subheading">c++基础知识</h2>
             <span class="meta">
               Posted by zw on
-              2022-06-20
+              2022-07-03
             </span>
 
 
@@ -404,11 +404,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
+              Estimated Reading Time <span class="post-count">4</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">732</span> In Total
+              Words <span class="post-count">1.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,77 +470,80 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>struct union enum介绍</h1>
-<h3 id="struct-结构体">struct 结构体</h3>
-<h5 id="声明方式：">声明方式：</h5>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="type">name</span>&#123;</span><br><span class="line">	<span class="built_in">type</span> member;</span><br><span class="line">	.....</span><br><span class="line">&#125; obj1, obj2;</span><br></pre></td></tr></table></figure>
-<p>一个结构体内可包含多个不同数据类型的成员。也可以作为一个类，它的所有成员默认都是public（class 默认都是private）。</p>
-<h5 id="对象创建及成员访问">对象创建及成员访问</h5>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fruit</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> weight;</span><br><span class="line">	<span class="keyword">float</span> price;</span><br><span class="line">&#125;apple, banana, melon;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fruit</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> weight;</span><br><span class="line">	<span class="keyword">float</span> price;</span><br><span class="line">&#125;;</span><br><span class="line">fruit apple, banana, melon;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 成员访问及赋值</span></span><br><span class="line"><span class="comment">// 直接访问</span></span><br><span class="line">apple.weight = <span class="number">100</span>;</span><br><span class="line">apple.price = <span class="number">12.0</span>;</span><br><span class="line"><span class="comment">// 指针访问</span></span><br><span class="line">fruit *ff = &amp;apple;</span><br><span class="line">ff-&gt;weight = <span class="number">100</span>;</span><br><span class="line">ff-&gt;weight = <span class="number">12.0</span>; <span class="comment">// 相当于 (*ff).weight = 12.0;</span></span><br></pre></td></tr></table></figure>
-<h5 id="结构体嵌套">结构体嵌套</h5>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 链表节点，使用结构体嵌套和</span><br><span class="line">typedef struct <span class="keyword">Node</span><span class="title">&#123;</span></span><br><span class="line"><span class="title">	node</span> *next;</span><br><span class="line">	int value;</span><br><span class="line">&#125; <span class="keyword">node</span><span class="title">;</span></span><br></pre></td></tr></table></figure>
-<h5 id="结构体构造函数">结构体构造函数</h5>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fruit</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> weight;</span><br><span class="line">	<span class="keyword">float</span> price;</span><br><span class="line">	<span class="built_in">fruit</span>(weight_, price_) : (weight_)weight, (price_)price_;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="union-联合体">union 联合体</h3>
-<h5 id="声明方式">声明方式</h5>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">union model_name&#123;</span><br><span class="line">	type1 elem1<span class="comment">;</span></span><br><span class="line">	type2 elem2<span class="comment">;</span></span><br><span class="line">	type3 elem3<span class="comment">;</span></span><br><span class="line">&#125;object<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-<p>联合体会根据成员所占内存的最大值来分配内存，使同一段内存可以以不同的数据类型访问。(联合体对象内的成员，同一时间只可存在一种)</p>
-<h5 id="对象创建及成员访问-2">对象创建及成员访问</h5>
-<p>联合体对象的创建跟结构体相似，我们接下来通过代码来理解一下union的使用和它的特性(所有成员共同享用一段内存)</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> book&#123;</span><br><span class="line">	<span class="keyword">int</span> page; <span class="comment">// 4字节</span></span><br><span class="line">	<span class="keyword">short</span> price; <span class="comment">// 2字节</span></span><br><span class="line">	<span class="keyword">char</span> <span class="keyword">id</span>; <span class="comment">// 1字节</span></span><br><span class="line">&#125; b1;</span><br><span class="line"><span class="comment">// 所占最大内存为page，所以book的对象占4个字节</span></span><br><span class="line">b1.id = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">b1.price = <span class="number">20</span>；</span><br><span class="line">b1.page = <span class="number">200000</span>;</span><br></pre></td></tr></table></figure>
-<p>经过一轮赋值操作，b1的内存分配变化如图所示：<br>
-<img src="union_store1.png" alt="union_store1"></p>
-<p>union对象每次的成员使用，都会对从它的首地址开始，重新存入新的值</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">book</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">		<span class="keyword">int</span> yuan;</span><br><span class="line">		<span class="keyword">int</span> dollar;</span><br><span class="line">		<span class="keyword">int</span> yan;</span><br><span class="line">		<span class="keyword">int</span> pound;</span><br><span class="line">	&#125; price;</span><br><span class="line">&#125; b;</span><br><span class="line"></span><br><span class="line">b.price.yuan = <span class="number">50</span>;</span><br><span class="line">b.price.dollar = <span class="number">6</span>;</span><br><span class="line">b.price.yan = <span class="number">1000</span>;</span><br><span class="line">b.price.pound = <span class="number">5</span>;</span><br><span class="line">std::cout &lt;&lt; b.price.yuan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.dollar &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.yan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.pound &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">b.id = <span class="number">2</span>;</span><br><span class="line">std::cout &lt;&lt; b.price.yuan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.dollar &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.yan &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b.price.pound &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
-<p><img src="union_store2.png" alt="union_store2"><br>
-<img src="union_run.png" alt="union_run"><br>
-上面的输出结果可以看到，每次新赋值一个成员，都会从起始地址开始赋值并覆盖该地址原有的值。</p>
-<h3 id="enum-枚举">enum 枚举</h3>
-<p>枚举可用于生成任意自定义的数据类型；</p>
-<h5 id="声明方式-2">声明方式</h5>
-<pre><code>enum enumName
-&#123;
-	m1, m2, m3 ....
-&#125; object_name;
-
-// 首成员没有规定则默认为0，依次按顺序+1递增，可以自己对其中某个成员赋值，机器会自行按顺序由大到小推导出其余值(注意后面的成员需要小于前面的成员)
-enum color&#123;
-	red,	// 默认为0 
-	blue, 	// 1
-	black, 	// 2
-	purple, 
-	green, 
-	yellow, 
-	orange
-&#125; mycolor;
-
-// 错误赋值
-enum color&#123;
-	red = 5,	
-	blue, 
-	black, 	
-	purple = 1, 
-	green, 
-	yellow, 
-	orange
-&#125; mycolor;
-
-// 使用
-mycolor = blue;
-std::cout &lt;&lt; mycolor == blue &lt;&lt; std::endl;</code></pre>
+        <h1>const</h1>
+<h2 id="1-const作用">1.const作用</h2>
+<p>含义：const声明的变量，它的值不能再被改变</p>
+<ul>
+<li>声明方式：</li>
+</ul>
+ <figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">type</span> <span class="keyword">object</span>;	<span class="comment">// 声明const变量</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>作用：
+<ol>
+<li>类型检查；<strong>const常量具有类型，编译器可以进行安全检查；#define宏定义没有数据类型，只是简单的字符串替换，不能进行安全检查。</strong></li>
+<li>防止修改；起保护变量值的作用。</li>
+<li>节省空间；const定义只给了地址，#define是立即数；const在程序运行过程只有一份拷贝，#define有若干个拷贝。</li>
+</ol>
+</li>
+</ul>
+<h2 id="2-const常量">2.const常量</h2>
+<h3 id="2-1-常量定义">2.1 常量定义</h3>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> a = <span class="number">10</span>;</span><br><span class="line">a = <span class="number">0</span>; <span class="comment">// 错误， 常量的值不能改变</span></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> i; <span class="comment">// 错误，常量必须要初始化</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2-常量的跨文件访问">2.2 常量的跨文件访问</h3>
+<p>非常量在跨文件使用时，只需要在应用的文件处指定extern。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file1</span></span><br><span class="line"><span class="keyword">int</span> ext;</span><br><span class="line"><span class="comment">// file2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> ext;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	std::cout &lt;&lt; ext &lt;&lt; std::endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常量在跨文件使用时，需要在所有涉及到它的文件处都显式地指定extern const，并且在其中一处对它初始化。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file1</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">const</span> ext = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file2</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="keyword">int</span> ext;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	std::cout &lt;&lt; ext &lt;&lt; std::endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// file3</span></span><br><span class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="keyword">int</span> ext;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	std::cout &lt;&lt; ext + <span class="number">10</span> &lt;&lt; std::endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-const与指针">3.const与指针</h2>
+<p>const与指针的三种结合：</p>
+<figure class="highlight nim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> *<span class="keyword">ptr</span>;	// 相当于<span class="built_in">int</span> <span class="keyword">const</span> *<span class="keyword">ptr</span>; <span class="keyword">ptr</span>为指向常量的指针</span><br><span class="line"><span class="built_in">int</span> *<span class="keyword">const</span> <span class="keyword">ptr</span>; // <span class="keyword">ptr</span>为常量指针，不能改变指向</span><br><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> *<span class="keyword">const</span> <span class="keyword">ptr</span>; // 上述两种的结合，<span class="keyword">ptr</span>指向一个常量，且不能改变指向</span><br></pre></td></tr></table></figure>
+<h3 id="3-1-指向常量的指针">3.1 指向常量的指针</h3>
+<ul>
+<li>可以指向变量。</li>
+</ul>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> *<span class="built_in">ptr</span><span class="comment">;</span></span><br><span class="line"><span class="built_in">int</span> a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line"><span class="built_in">ptr</span> = &amp;a<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>指向的对象的值不能改变</li>
+</ul>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> *<span class="built_in">ptr</span><span class="comment">;</span></span><br><span class="line">*<span class="built_in">ptr</span> = <span class="number">10</span><span class="comment">; // 错误，不能通过指针改变指向的常量的值 </span></span><br><span class="line"></span><br><span class="line">// 即使是指向变量，也不能通过指针改变指向目标的值</span><br><span class="line"><span class="built_in">int</span> a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line"><span class="built_in">ptr</span> = &amp;a<span class="comment">;</span></span><br><span class="line">*<span class="built_in">ptr</span> = <span class="number">20</span><span class="comment">; // 错误，不能通过指针改变指向的常量的值，但可用其他方法改变</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-常指针">3.2 常指针</h3>
+<ul>
+<li>常指针必须初始化，指针的指向不能修改，但是指向元素的值可改。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">int</span> *<span class="keyword">const</span> ptr = &amp;a;</span><br><span class="line">	<span class="keyword">int</span> *t = &amp;a;</span><br><span class="line">	*t = <span class="number">20</span>; </span><br><span class="line">	std::cout &lt;&lt; *ptr &lt;&lt; std::endl;</span><br><span class="line">	*ptr = <span class="number">30</span>;</span><br><span class="line">	std::cout &lt;&lt; *ptr &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>！注意，把一个常量的地址赋值给常指针ptr时，由于ptr指向一个变量且不可改变指向，导致会报错。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> * <span class="keyword">const</span> ptr=&amp;num; <span class="comment">//错误 const int* -&gt; int*</span></span><br><span class="line">    cout&lt;&lt;*ptr&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>解决上述问题，可以改为指向常量的常指针(const int *const ptr)或者指向常量的指针(const int *ptr)。</p>
+<h3 id="3-3-指向常量的常指针">3.3 指向常量的常指针</h3>
+<p>指向目标需要为常量，指针指向不变，需要初始化。</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line"><span class="keyword">const</span> <span class="built_in">int</span> *<span class="keyword">const</span> <span class="built_in">ptr</span> = &amp;a<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-const与函数">4.const与函数</h2>
+<h3 id="4-1-const-参数">4.1 const 参数</h3>
+<p>(1) 传递过来的参数及指针本身在函数内不可变，无意义！</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span>(<span class="params"><span class="keyword">const</span> <span class="built_in">int</span> <span class="keyword">var</span></span>)</span>;	<span class="comment">// 本来就是复制的副本，对原参无影响</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span>(<span class="params"><span class="built_in">int</span> *<span class="keyword">const</span> <span class="keyword">var</span></span>)	<span class="comment">// 参数的指针本来就是常量，类似于上面</span></span></span><br></pre></td></tr></table></figure>
+<p>(2) 在地址传递的方式中，保护输入不变，同时提高效率避免复制传参。</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">copy</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> *src, <span class="keyword">int</span> *dst)</span></span>;	<span class="comment">// 传入的src数组不一定是const，src数组在函数内不可改</span></span><br></pre></td></tr></table></figure>
+<p>(3) 使用常引用，提高效率同时防止修改，类似于(2)</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(<span class="keyword">const</span> A &amp;a)</span></span>;	<span class="comment">// a在函数内不可改，传入的a不一定是const</span></span><br></pre></td></tr></table></figure>
+<p>函数内部需要用到对象a但不能改变a，复制副本会浪费时间，为了提高效率，可以通过引用提高效率，同时用const避免对象被修改。<br>
+！！注意在普通类型void func(int a)之下，就没必要这样做了，因为普通类型复制、析构效率十分快。</p>
+<h3 id="4-2-const-返回值">4.2 const 返回值</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">int</span> <span class="title">func1</span><span class="params">()</span></span>;	<span class="comment">// 返回常量</span></span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">int</span> *<span class="title">func2</span><span class="params">()</span></span>;	<span class="comment">// 返回指向常量的指针</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="keyword">const</span> <span class="title">func3</span><span class="params">()</span></span>;	<span class="comment">// 返回常指针</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-const与类">5.const与类</h2>
+<h3 id="5-1-const-成员变量">5.1 const 成员变量</h3>
+<p>不可修改，而且只有const成员函数可以访问。</p>
+<h3 id="5-2-const-成员函数">5.2 const 成员函数</h3>
+<p>对所有的成员变量都不可以修改，可以访问const成员变量。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> price;</span><br><span class="line">	<span class="keyword">int</span> weight;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Fruit</span>()&#123;&#125;;</span><br><span class="line">	~<span class="built_in">Fruit</span>()&#123;&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getPrice</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getWeight</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> num)</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fruit::getPrice</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> price;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fruit::getWeight</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fruit::add</span><span class="params">(<span class="keyword">int</span> num)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num * weight * price;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/class c++/" data-toggle="tooltip" data-placement="top" title="class c++">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/Hexo-Theme-LiveMyLife/" data-toggle="tooltip" data-placement="top" title="Hexo-Theme-LiveMyLife">Next Post &rarr;</a>
+            <a href="/cn/class c++/" data-toggle="tooltip" data-placement="top" title="class c++">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -589,7 +592,7 @@ std::cout &lt;&lt; mycolor == blue &lt;&lt; std::endl;</code></pre>
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=struct union enum介绍&body=Hi,I found this website and thought you might like it https://zwe1in.github.io/cn/struct_union_enum/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=const 关键字&body=Hi,I found this website and thought you might like it https://zwe1in.github.io/cn/const/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -624,7 +627,7 @@ std::cout &lt;&lt; mycolor == blue &lt;&lt; std::endl;</code></pre>
       repo: '',
       owner: '',
       admin: '',
-      id: 'Mon Jun 20 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Sun Jul 03 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -677,7 +680,7 @@ std::cout &lt;&lt; mycolor == blue &lt;&lt; std::endl;</code></pre>
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">struct union enum介绍</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#struct-%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-nav-number">1.0.1.</span> <span class="toc-nav-text">struct 结构体</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-nav-number">1.0.1.0.1.</span> <span class="toc-nav-text">声明方式：</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E5%8F%8A%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE"><span class="toc-nav-number">1.0.1.0.2.</span> <span class="toc-nav-text">对象创建及成员访问</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E5%B5%8C%E5%A5%97"><span class="toc-nav-number">1.0.1.0.3.</span> <span class="toc-nav-text">结构体嵌套</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.0.1.0.4.</span> <span class="toc-nav-text">结构体构造函数</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#union-%E8%81%94%E5%90%88%E4%BD%93"><span class="toc-nav-number">1.0.2.</span> <span class="toc-nav-text">union 联合体</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F"><span class="toc-nav-number">1.0.2.0.1.</span> <span class="toc-nav-text">声明方式</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E5%8F%8A%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE-2"><span class="toc-nav-number">1.0.2.0.2.</span> <span class="toc-nav-text">对象创建及成员访问</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#enum-%E6%9E%9A%E4%B8%BE"><span class="toc-nav-number">1.0.3.</span> <span class="toc-nav-text">enum 枚举</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F-2"><span class="toc-nav-number">1.0.3.0.1.</span> <span class="toc-nav-text">声明方式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">const</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-const%E4%BD%9C%E7%94%A8"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.const作用</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-const%E5%B8%B8%E9%87%8F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2.const常量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E5%B8%B8%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1 常量定义</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-2-%E5%B8%B8%E9%87%8F%E7%9A%84%E8%B7%A8%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">2.2 常量的跨文件访问</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-const%E4%B8%8E%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3.const与指针</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-1-%E6%8C%87%E5%90%91%E5%B8%B8%E9%87%8F%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">3.1 指向常量的指针</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-%E5%B8%B8%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">3.2 常指针</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-3-%E6%8C%87%E5%90%91%E5%B8%B8%E9%87%8F%E7%9A%84%E5%B8%B8%E6%8C%87%E9%92%88"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.3 指向常量的常指针</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-const%E4%B8%8E%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4.const与函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-1-const-%E5%8F%82%E6%95%B0"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">4.1 const 参数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-2-const-%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">4.2 const 返回值</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-const%E4%B8%8E%E7%B1%BB"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5.const与类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-1-const-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">5.1 const 成员变量</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-2-const-%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">5.2 const 成员函数</span></a></li></ol></li></ol></li></ol>
         
         </div>
       </aside>
@@ -700,7 +703,7 @@ std::cout &lt;&lt; mycolor == blue &lt;&lt; std::endl;</code></pre>
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#struct union enum" title="struct union enum">struct union enum</a>
+            <a class="tag" href="/tags/#const 关键字" title="const 关键字">const 关键字</a>
             
           </div>
         </section>
