@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://zwe1in.github.io/categories/c/">
+  <link rel="canonical" href="https://zwe1in.github.io/cn/FileIO/">
   <title>
     
-      either thin | or die
+      文件I/O Linux - either thin | or die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -239,7 +239,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -249,7 +249,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -260,7 +260,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -271,7 +271,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -282,7 +282,7 @@
           <li>
             <a href="/archive/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -293,36 +293,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="categories/c/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -374,19 +352,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -408,10 +386,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Zw&#39;s Blog</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">Still Coding &gt;_&lt;</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#文件I/O" title="文件I/O">文件I/O</a>
+              
+            </div>
+            <h1>文件I/O Linux</h1>
+            <h2 class="subheading">c++基础知识</h2>
+            <span class="meta">
+              Posted by zw on
+              2022-07-04
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">3</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">803</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -452,358 +462,438 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>文件I/O(Linux)</h1>
+<h2 id="1-文件访问">1. 文件访问</h2>
+<h3 id="1-1-文件指针与识别符">1.1 文件指针与识别符</h3>
+<p>文件识别符</p>
+<table>
+<thead>
+<tr>
+<th>文件描述符</th>
+<th>含义</th>
+<th>数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STDIN_FILENO</td>
+<td>标准输入</td>
+<td>0</td>
+</tr>
+<tr>
+<td>STDOUT_FILENO</td>
+<td>标准输出</td>
+<td>1</td>
+</tr>
+<tr>
+<td>STDERR_FILENO</td>
+<td>标准错误</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fileno(stdin) = %d\n&quot;</span>, <span class="built_in">fileno</span>(stdin));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fileno(stdout) = %d\n&quot;</span>, <span class="built_in">fileno</span>(stdout));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;fileno(stderr) = %d\n&quot;</span>, <span class="built_in">fileno</span>(stderr));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">fileno</span><span class="params">(stdin)</span></span> = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="title">fileno</span><span class="params">(stdout)</span></span> = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="title">fileno</span><span class="params">(stderr)</span></span> = <span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>打开文件：<br>
+1）利用open函数打开。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *pathname, <span class="keyword">int</span> flags)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">open</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *pathname, <span class="keyword">int</span> flags, <span class="keyword">mode_t</span> mode)</span></span>;</span><br><span class="line"><span class="comment">// 返回值为文件标识符fd，flags为打开方式，mode为文件权限设置(仅在创建时有用)，都可以通过|来添加多个属性</span></span><br></pre></td></tr></table></figure>
+<h3 id="flags">flags</h3>
+<table>
+<thead>
+<tr>
+<th>flags</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O_RDONLY</td>
+<td>只读</td>
+</tr>
+<tr>
+<td>O_WRONLY</td>
+<td>只写</td>
+</tr>
+<tr>
+<td>O_RDWR</td>
+<td>读写</td>
+</tr>
+<tr>
+<td>O_APPEND</td>
+<td>内容追加</td>
+</tr>
+<tr>
+<td>O_CREAT</td>
+<td>打开文件，如果文件不存在就创建</td>
+</tr>
+<tr>
+<td>O_EXCL</td>
+<td>如果文件存在且置O_CREAT，就强制open失败</td>
+</tr>
+<tr>
+<td>O_TRUNC</td>
+<td>打开文件时候，清空内容</td>
+</tr>
+<tr>
+<td>O_DSYNC</td>
+<td>设置写入缓冲区</td>
+</tr>
+<tr>
+<td>O_RSYNC</td>
+<td>设置读入缓冲区</td>
+</tr>
+<tr>
+<td>O_SYNC</td>
+<td>同步写入文件，就是不断刷新缓冲区</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mode">mode</h3>
+<table>
+<thead>
+<tr>
+<th>mode</th>
+<th>含义</th>
+<th>数字法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S_IRUSR</td>
+<td>文件所有者只读</td>
+<td>4</td>
+</tr>
+<tr>
+<td>S_IWUSR</td>
+<td>文件所有者只写</td>
+<td>2</td>
+</tr>
+<tr>
+<td>S_IXUSR</td>
+<td>文件所有者执行</td>
+<td>1</td>
+</tr>
+<tr>
+<td>S_IRWXU</td>
+<td>文件所有者rwx全开</td>
+<td>7</td>
+</tr>
+<tr>
+<td>S_IRGRP</td>
+<td>文件所属组只读</td>
+<td>4</td>
+</tr>
+<tr>
+<td>S_IWGRP</td>
+<td>文件所属组只写</td>
+<td>2</td>
+</tr>
+<tr>
+<td>S_IXGRP</td>
+<td>文件所属组只执行</td>
+<td>1</td>
+</tr>
+<tr>
+<td>S_IRWXG</td>
+<td>文件所属组全开</td>
+<td>7</td>
+</tr>
+<tr>
+<td>S_IROTH</td>
+<td>其它用户只读</td>
+<td>4</td>
+</tr>
+<tr>
+<td>S_IWOTH</td>
+<td>其他用户只写</td>
+<td>2</td>
+</tr>
+<tr>
+<td>S_IXOTH</td>
+<td>其他用户只执行</td>
+<td>1</td>
+</tr>
+<tr>
+<td>S_IRWXO</td>
+<td>其他用户全开</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fd = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *fileName = <span class="string">&quot;./test.txt&quot;</span>;</span><br><span class="line">	fd = <span class="built_in">open</span>(fileName, O_CREAT | O_RDONLY, <span class="number">0777</span>); <span class="comment">// 可以直接用数字法</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2）利用fdopen函数打开。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#inlcude <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="function">FILE *<span class="title">fdopen</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">char</span> *mode)</span></span>;	<span class="comment">// fd为文件标识符，从open函数获取；mode：w、r、wr、a</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#inlcude <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fd = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *fileName = <span class="string">&quot;test.txt&quot;</span>;</span><br><span class="line">	fd = <span class="built_in">open</span>(fileName. O_CREAT | O_RDWD, <span class="number">0777</span>);</span><br><span class="line">	FILE *fp = <span class="built_in">fdopen</span>(fd, <span class="string">&#x27;w&#x27;</span>);	<span class="comment">// 获取文件指针</span></span><br><span class="line">	<span class="built_in">fprintf</span>(fp, <span class="string">&quot;Hello world&quot;</span>);	<span class="comment">// 数据写入</span></span><br><span class="line">	<span class="built_in">fclose</span>(fp);	<span class="comment">// 文件流关闭</span></span><br><span class="line">	<span class="built_in">close</span>(fd);	<span class="comment">// 关闭fd</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-文件读写">2. 文件读写</h2>
+<h3 id="2-1-读文件">2.1 读文件</h3>
+<p>利用read函数配合文件标识符fd对文件进行读取。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span>;<span class="comment">// 将count个字符读入到buf指针所指内存处,成功则返回读到的字节数，失败则返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span>;<span class="comment">// 将count个字符写入文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> fd = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">ssize_t</span> size = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *fileName = <span class="string">&quot;test.txt&quot;</span>;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line">    fd = <span class="built_in">open</span>(fileName, O_RDWR | O_APPEND);</span><br><span class="line">    <span class="keyword">if</span>(fd == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;file reading failure!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// 写文件</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *w_buf = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">    size = <span class="built_in">write</span>(fd, w_buf, <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">close</span>(fd);	<span class="comment">// 重新打开，不然再读时指针位置不是停留在开始</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 读文件</span></span><br><span class="line">    fd = <span class="built_in">open</span>(fileName, O_RDWR);</span><br><span class="line">    <span class="keyword">while</span>(size)</span><br><span class="line">    &#123;</span><br><span class="line">        size = <span class="built_in">read</span>(fd, buf, <span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span>(size == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">close</span>(fd);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;file reading failure!&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(size == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;To the end of the file&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, buf[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-文件偏移量">3. 文件偏移量</h2>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/static/" data-toggle="tooltip" data-placement="top" title="static 关键字">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/inline/" data-toggle="tooltip" data-placement="top" title="inline 关键字">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=文件I/O Linux&body=Hi,I found this website and thought you might like it https://zwe1in.github.io/cn/FileIO/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Jul 04 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">文件I&#x2F;O(Linux)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 文件访问</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88%E4%B8%8E%E8%AF%86%E5%88%AB%E7%AC%A6"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.1 文件指针与识别符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#flags"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">flags</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#mode"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">mode</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. 文件读写</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1 读文件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E6%96%87%E4%BB%B6%E5%81%8F%E7%A7%BB%E9%87%8F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. 文件偏移量</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
-
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
-          
-          <li>
-            07-04
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/inline/" style="color: #0085a1">
-              <span>
-                inline 关键字
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-04
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/FileIO/" style="color: #0085a1">
-              <span>
-                文件I/O Linux
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-04
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/static/" style="color: #0085a1">
-              <span>
-                static 关键字
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            07-03
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/const/" style="color: #0085a1">
-              <span>
-                const 关键字
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            06-20
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/struct_union_enum/" style="color: #0085a1">
-              <span>
-                struct union enum介绍
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2020">
-          <span class="tag-text">2020</span>
-        </span>
-        <ul>
-          
-          <li>
-            04-17
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/Hexo-Theme-LiveMyLife/" style="color: #0085a1">
-              <span>
-                Hexo-Theme-LiveMyLife
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#文件I/O" title="文件I/O">文件I/O</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
-    <a href="/tags/#struct union enum" title="struct union enum" rel="1">struct union enum</a>
-    
-    
-    
-    <a href="/tags/#const 关键字" title="const 关键字" rel="1">const 关键字</a>
-    
-    
-    
-    <a href="/tags/#static 关键字" title="static 关键字" rel="1">static 关键字</a>
-    
-    
-    
-    <a href="/tags/#文件I/O" title="文件I/O" rel="1">文件I/O</a>
-    
-    
-    
-    <a href="/tags/#inline 关键字" title="inline 关键字" rel="1">inline 关键字</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Fat people have no future, either thin or die...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/V-Vincen">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://twitter.com/V_Vincen_">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.instagram.com/v_vincen_">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-      <li>
-        <a target="_blank" href="http://weibo.com/WVincen">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../cn/static/">
-      <li>static 关键字</li>
-    </a>
-    
-    <a href="../../cn/FileIO/">
-      <li>文件I/O Linux</li>
-    </a>
-    
-    <a href="../../cn/inline/">
-      <li>inline 关键字</li>
-    </a>
-    
-    <a href="../../cn/const/">
-      <li>const 关键字</li>
-    </a>
-    
-    <a href="../../cn/struct_union_enum/">
-      <li>struct union enum介绍</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-<h5><a href="/">FRIENDS</a></h5>
-<ul class="list-inline">
-  
-  <li><a href="https://v-vincen.life/" target="_blank">V_Vincen</a></li>
-  
-  <li><a href="http://beantech.org" target="_blank">Bean Tech</a></li>
-  
-  <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
-  
-  <li><a href="https://hexo.io/" target="_blank">Hexo</a></li>
-  
-</ul>
-
-
+        
         <hr>
-    
-        <!-- Archives -->
+        <h5>链友</h5>
+        <ul class="list-inline">
 
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/07/">July 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
-    
-    <a href="/categories/#c++">
-      <li>c++</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -995,7 +1085,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
