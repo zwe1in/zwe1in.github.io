@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://zwe1in.github.io/cn/inline/">
+  <link rel="canonical" href="https://zwe1in.github.io/cn/virtual/">
   <title>
     
-      inline 关键字 - either thin | or die
+      抽象类 - either thin | or die
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -389,14 +389,14 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#inline 关键字" title="inline 关键字">inline 关键字</a>
+              <a class="tag" href="/tags/#抽象类" title="抽象类">抽象类</a>
               
             </div>
-            <h1>inline 关键字</h1>
+            <h1>抽象类</h1>
             <h2 class="subheading">c++基础知识</h2>
             <span class="meta">
               Posted by zw on
-              2022-07-04
+              2022-07-05
             </span>
 
 
@@ -408,7 +408,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">416</span> In Total
+              Words <span class="post-count">241</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,40 +470,28 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>inline</h1>
-<p>inline用于定义内联函数。</p>
-<h2 id="1-内联函数与普通函数的区别">1. 内联函数与普通函数的区别</h2>
-<ol>
-<li>在程序执行时，当遇到普通函数，它会跳转到函数声明处，调用该函数；而内联函数则是直接将函数的整块代码放在了调用运行的位置上，不需要跳转。</li>
-<li>普通函数只会有一份内存，内联函数在每个调用它的地方都会有一份内存。</li>
-<li>内联函数一般定义且实现在头文件中，普通函数一般在头文件定义，在cpp文件中实现。</li>
-</ol>
- <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">multiple</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">	 <span class="keyword">return</span> x * y;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	std::cout &lt;&lt; <span class="built_in">multiple</span>(<span class="number">2</span>, <span class="number">2</span>) &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
-<p>！！注意：</p>
-<ol>
-<li>内联函数实际是以空间换取速度，但当函数体内代码很长，使用内联会严重消耗内存。</li>
-<li>当函数体内出现循环、递归，那么函数体执行的时间比调用时间长很多，相比之下，内联函数的效率收益就十分低。</li>
-</ol>
-<h2 id="2-类与内联函数">2. 类与内联函数</h2>
-<p>在类的内部实现的函数，都是内联函数</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;&#125;	<span class="comment">// 一定是内联函数，因为在类内实现</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func2</span><span class="params">()</span></span>;	<span class="comment">// 不一定是内联函数，取决于外部定义</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Demo::func2</span><span class="params">()</span></span>&#123;&#125;	<span class="comment">// 定义func2()为内联函数</span></span><br></pre></td></tr></table></figure>
-<p>对于虚函数，虚函数可以设置为内联函数，但是当虚函数需要表现为多态时，就不能定义为内联，因为编译器使用时无法识别要用那个代码块。<br>
-因此，虚函数尽量不要使用内联。</p>
-
+        <h1>抽象类</h1>
+<h2 id="1-特点">1. 特点</h2>
+<ul>
+<li>抽象类就是包含了纯虚函数的类，纯虚函数：由virtual声明，且没有函数体的虚函数。</li>
+<li>抽象类不能创建对象</li>
+<li>抽象类的实现只能是派生子类，子类需要实现所有父类的纯虚函数</li>
+<li>抽象类的构造函数不能是虚函数，析构函数可以是虚函数</li>
+</ul>
+<h2 id="2-抽象类的实现">2. 抽象类的实现</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 抽象类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dad</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="built_in">Dad</span>()&#123;std::cout &lt;&lt; <span class="string">&quot;Dad construction&quot;</span> &lt;&lt;std::endl;&#125;</span><br><span class="line">	<span class="keyword">virtual</span> ~<span class="built_in">Dad</span>()&#123;std::cout &lt;&lt; <span class="string">&quot;Dad destruction&quot;</span> &lt;&lt; std::endl;&#125;	<span class="comment">// 虚函数</span></span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>= <span class="number">0</span>; <span class="comment">// 纯虚函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> :</span> Dad</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">Son</span>()&#123;std::cout &lt;&lt; <span class="string">&quot;Son construction&quot;</span> &lt;&lt; std::endl;&#125;</span><br><span class="line">	~<span class="built_in">Son</span>()&#123;std::cout &lt;&lt; <span class="string">&quot;Son destruction&quot;</span> &lt;&lt; std::endl;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;std::cout &lt;&lt; <span class="string">&quot;func used&quot;</span> &lt;&lt; std::endl;&#125;	</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 父类指针指向子类，调用子类中所实现的纯虚函数</span></span><br><span class="line">	Dad *p = <span class="keyword">new</span> <span class="built_in">Son</span>();</span><br><span class="line">	p-&gt;<span class="built_in">func</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/static/" data-toggle="tooltip" data-placement="top" title="static 关键字">&larr; Previous Post</a>
+            <a href="/cn/FileIO/" data-toggle="tooltip" data-placement="top" title="文件I/O Linux">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/const/" data-toggle="tooltip" data-placement="top" title="const 关键字">Next Post &rarr;</a>
+            <a href="/cn/static/" data-toggle="tooltip" data-placement="top" title="static 关键字">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -552,7 +540,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=inline 关键字&body=Hi,I found this website and thought you might like it https://zwe1in.github.io/cn/inline/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=抽象类&body=Hi,I found this website and thought you might like it https://zwe1in.github.io/cn/virtual/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -587,7 +575,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Mon Jul 04 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Tue Jul 05 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -640,7 +628,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">inline</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0%E4%B8%8E%E6%99%AE%E9%80%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 内联函数与普通函数的区别</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E7%B1%BB%E4%B8%8E%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. 类与内联函数</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">抽象类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E7%89%B9%E7%82%B9"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 特点</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. 抽象类的实现</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -663,7 +651,7 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#inline 关键字" title="inline 关键字">inline 关键字</a>
+            <a class="tag" href="/tags/#抽象类" title="抽象类">抽象类</a>
             
           </div>
         </section>

@@ -478,48 +478,6 @@
   <!-- top end -->
   
 
-  <a href="/cn/static/">
-    <h2 class="post-title">
-      static 关键字
-    </h2>
-    <h3 class="post-subtitle">
-      c++基础知识
-    </h3>
-    <div class="post-content-preview">
-      static
-作用
-声明静态变量，对于static变量，仅被分配一次空间，分配到静态储存空间，会持续到整个程序结束位置才释放。
-1. 静态变量
-
-声明：static type name；
-生命周期：静态变量的生命周期是整个程序从执行到结束；
-作用域：本文件内，不可跨文件；
-
-1234567891011121314#include &lt;iostream&gt;void count()&#1......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
-    2022-07-04
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#static 关键字" title="static 关键字">static 关键字</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
   <a href="/cn/FileIO/">
     <h2 class="post-title">
       文件I/O Linux
@@ -564,11 +522,95 @@ STDERR_FILENO
   
   <p class="post-meta" style="margin: 10px 0;">
     Posted by zw on
-    2022-07-04
+    2022-07-06
   </p>
   <div class="tags">
     
     <a href="/tags/#文件I/O" title="文件I/O">文件I/O</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/virtual/">
+    <h2 class="post-title">
+      抽象类
+    </h2>
+    <h3 class="post-subtitle">
+      c++基础知识
+    </h3>
+    <div class="post-content-preview">
+      抽象类
+1. 特点
+
+抽象类就是包含了纯虚函数的类，纯虚函数：由virtual声明，且没有函数体的虚函数。
+抽象类不能创建对象
+抽象类的实现只能是派生子类，子类需要实现所有父类的纯虚函数
+抽象类的构造函数不能是虚函数，析构函数可以是虚函数
+
+2. 抽象类的实现
+12345678910111213141516171819202122// 抽象类class Dad&#123;	Dad()&#12......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by zw on
+    2022-07-05
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#抽象类" title="抽象类">抽象类</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/static/">
+    <h2 class="post-title">
+      static 关键字
+    </h2>
+    <h3 class="post-subtitle">
+      c++基础知识
+    </h3>
+    <div class="post-content-preview">
+      static
+作用
+声明静态变量，对于static变量，仅被分配一次空间，分配到静态储存空间，会持续到整个程序结束位置才释放。
+1. 静态变量
+
+声明：static type name；
+生命周期：静态变量的生命周期是整个程序从执行到结束；
+作用域：本文件内，不可跨文件；
+
+1234567891011121314#include &lt;iostream&gt;void count()&#1......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by zw on
+    2022-07-04
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#static 关键字" title="static 关键字">static 关键字</a>
     
   </div>
   
@@ -807,6 +849,10 @@ Gitee 仓库地址：ht......
     <a href="/tags/#inline 关键字" title="inline 关键字" rel="1">inline 关键字</a>
     
     
+    
+    <a href="/tags/#抽象类" title="抽象类" rel="1">抽象类</a>
+    
+    
   </div>
 </section>
 
@@ -894,12 +940,16 @@ Gitee 仓库地址：ht......
 <div class="widget">
   <ul>
     
-    <a href="cn/static/">
-      <li>static 关键字</li>
-    </a>
-    
     <a href="cn/FileIO/">
       <li>文件I/O Linux</li>
+    </a>
+    
+    <a href="cn/virtual/">
+      <li>抽象类</li>
+    </a>
+    
+    <a href="cn/static/">
+      <li>static 关键字</li>
     </a>
     
     <a href="cn/inline/">
@@ -908,10 +958,6 @@ Gitee 仓库地址：ht......
     
     <a href="cn/const/">
       <li>const 关键字</li>
-    </a>
-    
-    <a href="cn/struct_union_enum/">
-      <li>struct union enum介绍</li>
     </a>
     
   </ul>
@@ -942,7 +988,7 @@ Gitee 仓库地址：ht......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/07/">July 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/07/">July 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 

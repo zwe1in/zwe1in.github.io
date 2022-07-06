@@ -396,7 +396,7 @@
             <h2 class="subheading">c++基础知识</h2>
             <span class="meta">
               Posted by zw on
-              2022-07-04
+              2022-07-06
             </span>
 
 
@@ -404,11 +404,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">3</span> Minutes
+              Estimated Reading Time <span class="post-count">9</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">803</span> In Total
+              Words <span class="post-count">2.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -639,19 +639,116 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span>;<span class="comment">// 将count个字符读入到buf指针所指内存处,成功则返回读到的字节数，失败则返回-1</span></span><br><span class="line"><span class="function"><span class="keyword">ssize_t</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">const</span> <span class="keyword">void</span> *buf, <span class="keyword">size_t</span> count)</span></span>;<span class="comment">// 将count个字符写入文件</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> fd = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">ssize_t</span> size = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *fileName = <span class="string">&quot;test.txt&quot;</span>;</span><br><span class="line">    <span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line">    fd = <span class="built_in">open</span>(fileName, O_RDWR | O_APPEND);</span><br><span class="line">    <span class="keyword">if</span>(fd == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;file reading failure!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// 写文件</span></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *w_buf = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">    size = <span class="built_in">write</span>(fd, w_buf, <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">close</span>(fd);	<span class="comment">// 重新打开，不然再读时指针位置不是停留在开始</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 读文件</span></span><br><span class="line">    fd = <span class="built_in">open</span>(fileName, O_RDWR);</span><br><span class="line">    <span class="keyword">while</span>(size)</span><br><span class="line">    &#123;</span><br><span class="line">        size = <span class="built_in">read</span>(fd, buf, <span class="number">10</span>);</span><br><span class="line">        <span class="keyword">if</span>(size == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">close</span>(fd);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;file reading failure!&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(size == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;To the end of the file&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, buf[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3-文件偏移量">3. 文件偏移量</h2>
+<p>当需要从文件的某个位置开始读写时，可以利用lseek()函数设定初始偏移量。（注意，当文件打开时，如果没有O_APPEND，默认指向首位；否则，默认指向末尾。）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;uinstd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">off_t</span> <span class="title">lseek</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">off_t</span> offset, <span class="keyword">int</span> whence)</span></span>;</span><br><span class="line"><span class="comment">// offset 为偏移目标位置whence多少个字符，whence表示初始位置，函数返回最终实际偏移量，出错则返回-1。</span></span><br></pre></td></tr></table></figure>
+<p>whence参数</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SEEK_SET</td>
+<td>相对文件开始位置</td>
+</tr>
+<tr>
+<td>SEEK_CUR</td>
+<td>相对当前位置</td>
+</tr>
+<tr>
+<td>SEEK_END</td>
+<td>相对文件末尾位置</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#inlcude <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#inlcude <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fd = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">ssize_t</span> size = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">off_t</span> offset = <span class="number">-1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *buf = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> *fileName = <span class="string">&quot;test.txt&quot;</span>;</span><br><span class="line">	</span><br><span class="line">	fd = <span class="built_in">open</span>(fileName, O_CREAT | O_RDWR, <span class="number">0777</span>);</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">-1</span> == fd)</span><br><span class="line">	&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;File open error&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	offset = <span class="built_in">lseek</span>(fd, <span class="number">5</span>, SEEK_SET);</span><br><span class="line">	<span class="keyword">if</span>(<span class="number">-1</span> == offset)</span><br><span class="line">	&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;Location finding error&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	size = <span class="built_in">write</span>(fd, buf, <span class="built_in">strlen</span>(buf));	<span class="comment">// 注意这是覆盖不是插入！</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="number">-1</span> == size)</span><br><span class="line">	&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;Writing file error&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">close</span>(fd);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原文件内容</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123456789</span></span><br></pre></td></tr></table></figure>
+<p>修改后内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1234hello world</span><br></pre></td></tr></table></figure>
+<h2 id="4-文件状态查询">4. 文件状态查询</h2>
+<p>获取文件信息的函数</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">stat</span>(<span class="params"><span class="keyword">const</span> <span class="built_in">char</span> *path, <span class="keyword">struct</span> stat *buf</span>)</span>;</span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">fstat</span>(<span class="params"><span class="built_in">int</span> filedes, <span class="keyword">struct</span> stat *buf</span>)</span>;</span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">lstat</span>(<span class="params"><span class="built_in">int</span> <span class="built_in">char</span> *path, <span class="keyword">struct</span> stat *buf</span>)</span>;</span><br><span class="line"><span class="comment">// 函数调用成功返回0，失败返回-1。</span></span><br></pre></td></tr></table></figure>
+<p>stat 结构体</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">stat</span> &#123;</span></span><br><span class="line">        <span class="keyword">mode_t</span>     st_mode;       <span class="comment">//文件对应的模式，文件，目录等</span></span><br><span class="line">        <span class="keyword">ino_t</span>      st_ino;       <span class="comment">//inode节点号</span></span><br><span class="line">        <span class="keyword">dev_t</span>      st_dev;        <span class="comment">//设备号码</span></span><br><span class="line">        <span class="keyword">dev_t</span>      st_rdev;       <span class="comment">//特殊设备号码</span></span><br><span class="line">        <span class="keyword">nlink_t</span>    st_nlink;      <span class="comment">//文件的连接数</span></span><br><span class="line">        <span class="keyword">uid_t</span>      st_uid;        <span class="comment">//文件所有者</span></span><br><span class="line">        <span class="keyword">gid_t</span>      st_gid;        <span class="comment">//文件所有者对应的组</span></span><br><span class="line">        <span class="keyword">off_t</span>      st_size;       <span class="comment">//普通文件，对应的文件字节数</span></span><br><span class="line">        <span class="keyword">time_t</span>     st_atime;      <span class="comment">//文件最后被访问的时间</span></span><br><span class="line">        <span class="keyword">time_t</span>     st_mtime;      <span class="comment">//文件内容最后被修改的时间</span></span><br><span class="line">        <span class="keyword">time_t</span>     st_ctime;      <span class="comment">//文件状态改变时间</span></span><br><span class="line">        <span class="keyword">blksize_t</span> st_blksize;    <span class="comment">//文件内容对应的块大小</span></span><br><span class="line">        <span class="keyword">blkcnt_t</span>   st_blocks;     <span class="comment">//伟建内容对应的块数量</span></span><br><span class="line">      &#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#inlcude <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;uinstd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">	<span class="keyword">if</span>(<span class="number">-1</span> == <span class="built_in">stat</span>(<span class="string">&quot;test.txt&quot;</span>, &amp;st))	<span class="comment">// 注意第二个参数是指针，要传地址</span></span><br><span class="line">	&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;get stat error.&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;file size: &quot;</span> &lt;&lt; st.st_size &lt;&lt; std::endl;</span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;file inode: &quot;</span> &lt;&lt; st.st_ino &lt;&lt; std::endl;</span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;file uid: &quot;</span> &lt;&lt; st.st_uid &lt;&lt; std::endl;</span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;file mode: &quot;</span> &lt;&lt; st.st_mode &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-文件锁">5. 文件锁</h2>
+<p>Linux文件系统在多个用户共同操作一个文件时，会采用对文件上锁的方式来避免资源共享的竞争。文件锁分两种，建议性锁和强制性锁。</p>
+<ul>
+<li>建议性锁<br>
+给文件上锁后，仅仅是添加一个标识，告诉别人存在这个锁，但文件仍然可以被操作。就相当于红绿灯，告诉你可不可以通行，但总会有闯红灯的人。</li>
+<li>强制性锁<br>
+给文件上锁后，会造成进程阻塞，禁止其它操作。好比一个交警站在路口，强制闯红灯的人遵守规则。</li>
+</ul>
+<p>Linux下可以使用fcntl函数对文件上锁，在大多情况下，上锁都是上建议性锁。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fcntl</span><span class="params">(<span class="keyword">int</span> fd, <span class="keyword">int</span> cmd, struct flock *lock)</span></span>;</span><br><span class="line"><span class="comment">// fd为文件描述符，cmd为操作命令，lock是指向flock结构体的指针，表示一个文件锁或记录锁。</span></span><br><span class="line"><span class="comment">// 函数成功执行返回0，出错返回-1</span></span><br></pre></td></tr></table></figure>
+<p>cmd 参数<br>
+F_GETLK：根据lock的描述，决定是否上锁。<br>
+F_SETLK：直接根据lock的描述上锁。</p>
+<p>flock结构体</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">flock</span>&#123;</span></span><br><span class="line">	<span class="keyword">short</span> <span class="keyword">int</span> l_type; <span class="comment">// 锁状态</span></span><br><span class="line">	<span class="keyword">short</span> <span class="keyword">int</span> l_whence;	<span class="comment">// 配合l_start确定锁开头位置</span></span><br><span class="line">	<span class="keyword">off_t</span> l_start;	<span class="comment">// 锁区域的开头位置，表示相对于l_whence有多少个字符</span></span><br><span class="line">	<span class="keyword">off_t</span> l_len;	<span class="comment">// 锁区域的大小，锁的长度(0为到文件末尾)</span></span><br><span class="line">	<span class="keyword">pid_t</span> l_pid;	<span class="comment">// 锁定动作的进程id</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>l_type:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F_RDLCK</td>
+<td>共享锁，也叫读取锁，同一时刻能有多个进程建立读取锁</td>
+</tr>
+<tr>
+<td>F_WRLCK</td>
+<td>独占锁，在任何时刻只能有一个进程建立写入锁</td>
+</tr>
+<tr>
+<td>F_UNLCK</td>
+<td>解除锁定</td>
+</tr>
+</tbody>
+</table>
+<p>l_whence:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SEEK_SET</td>
+<td>相对文件开始位置</td>
+</tr>
+<tr>
+<td>SEEK_CUR</td>
+<td>相对当前位置</td>
+</tr>
+<tr>
+<td>SEEK_END</td>
+<td>相对文件末尾位置</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sysy/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	struct flock <span class="built_in">lock</span>;</span><br><span class="line">	int res, fd = open(<span class="string">&quot;test.txt&quot;</span>, O_RDWR | O_CREAT, <span class="number">0777</span>);</span><br><span class="line">	<span class="keyword">if</span>(fd != -<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">lock</span>.l_type = F_WRLCK;</span><br><span class="line">		<span class="built_in">lock</span>.l_whence = SEEK_SET;</span><br><span class="line">		<span class="built_in">lock</span>.l_start = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">lock</span>.l_len = <span class="number">0</span>; <span class="comment">// 直到文件末尾</span></span><br><span class="line">		<span class="built_in">lock</span>.l_pid = getpid();</span><br><span class="line">		res = fcntl(fd, F_SETLK, &amp;<span class="built_in">lock</span>);</span><br><span class="line">		<span class="keyword">while</span>(<span class="number">1</span>);	<span class="comment">// 让文件死锁，观察其它操作的读写情况</span></span><br><span class="line">	&#125;</span><br><span class="line">	return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上默认使用的是系统的建议性锁，并非强制性锁。若要使用强制性锁，我们需要对目标文件所在的文件夹使用mount命令-o 选项来挂载，并使用chmod函数或者chmod命令将文件用户组的x权限去掉。</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 假设目标文件在/home/usr/myfile目录下,名为file.txt</span></span><br><span class="line"><span class="meta"># mount -o remount,mand ~/myfile</span></span><br><span class="line"><span class="meta"># chmod 766 file.txt	// 或者是 chomod g-x file.txt</span></span><br></pre></td></tr></table></figure>
+<p>再次执行文件锁程序后，再对文件进行其它输入访问，会让命令阻塞。</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/static/" data-toggle="tooltip" data-placement="top" title="static 关键字">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/inline/" data-toggle="tooltip" data-placement="top" title="inline 关键字">Next Post &rarr;</a>
+            <a href="/cn/virtual/" data-toggle="tooltip" data-placement="top" title="抽象类">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -735,7 +832,7 @@
       repo: '',
       owner: '',
       admin: '',
-      id: 'Mon Jul 04 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Wed Jul 06 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -788,7 +885,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">文件I&#x2F;O(Linux)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 文件访问</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88%E4%B8%8E%E8%AF%86%E5%88%AB%E7%AC%A6"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.1 文件指针与识别符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#flags"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">flags</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#mode"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">mode</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. 文件读写</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1 读文件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E6%96%87%E4%BB%B6%E5%81%8F%E7%A7%BB%E9%87%8F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. 文件偏移量</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">文件I&#x2F;O(Linux)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1. 文件访问</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-1-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88%E4%B8%8E%E8%AF%86%E5%88%AB%E7%AC%A6"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">1.1 文件指针与识别符</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#flags"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">flags</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#mode"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">mode</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">2. 文件读写</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-1-%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">2.1 读文件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-%E6%96%87%E4%BB%B6%E5%81%8F%E7%A7%BB%E9%87%8F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">3. 文件偏移量</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E6%9F%A5%E8%AF%A2"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">4. 文件状态查询</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-%E6%96%87%E4%BB%B6%E9%94%81"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">5. 文件锁</span></a></li></ol></li></ol>
         
         </div>
       </aside>
