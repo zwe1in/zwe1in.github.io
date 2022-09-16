@@ -58,7 +58,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="description" content="It&#39;s an IT blog..."/>
-  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <meta name="keyword" content="C++ Linux"/>
   <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
 
   <!-- Place this tag in your head or just before your close body tag. -->
@@ -142,7 +142,7 @@
   <link rel="canonical" href="https://zwe1in.github.io/cn/">
   <title>
     
-      either thin | or die
+      coding library
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -391,10 +391,6 @@
     }
 
     
-      #signature {/*signature*/
-        background-image: url('/img/signature/vincent-white.png');
-      }
-    
   </style>
 
 
@@ -478,6 +474,45 @@
   <!-- top end -->
   
 
+  <a href="/cn/enum/">
+    <h2 class="post-title">
+      enum 枚举
+    </h2>
+    <h3 class="post-subtitle">
+      c++基础知识
+    </h3>
+    <div class="post-content-preview">
+      enum 枚举1. 传统枚举1234567enum Animal&#123;	TIGER = 2,	// 2	PANDA,		// 3	CAT = 10,	// 10	LION,		// 11	DOG			// 12&#125;;
+特点：
+
+全局作用域，容易产生命名冲突
+枚举成员值会隐式转为int
+枚举成员值由上到下递增，以已经定义值的成员为准，向前后推导（都没定义就从0开始）
+用来表征枚举......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by zwLin on
+    2022-08-30
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#enum 枚举" title="enum 枚举">enum 枚举</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/FileIO/">
     <h2 class="post-title">
       文件I/O Linux
@@ -521,12 +556,45 @@ STDERR_FILENO
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
+    Posted by zwLin on
     2022-07-06
   </p>
   <div class="tags">
     
     <a href="/tags/#文件I/O" title="文件I/O">文件I/O</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/byteAlignas/">
+    <h2 class="post-title">
+      字节对齐
+    </h2>
+    <h3 class="post-subtitle">
+      c++基础知识
+    </h3>
+    <div class="post-content-preview">
+      字节对齐1. 什么是字节对齐CPU在读取内存的数据时，通常是一段一段地读，比如在32位系统中，CPU每次可读4个字节。对于一个结构体来说，他们会被分配在一块内存中，首地址和首成员地址相同，其余成员顺序存储。为了时CPU能对结构体内的每个成员进行快速的访问，每个成员的起始地址应该要具有某些特性，这便是所谓的”对齐”。如图：1234struct Demo&#123;	char a;	int b;......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by zwLin on
+    2022-07-06
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#字节对齐" title="字节对齐">字节对齐</a>
     
   </div>
   
@@ -563,7 +631,7 @@ STDERR_FILENO
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
+    Posted by zwLin on
     2022-07-05
   </p>
   <div class="tags">
@@ -605,7 +673,7 @@ STDERR_FILENO
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
+    Posted by zwLin on
     2022-07-04
   </p>
   <div class="tags">
@@ -646,7 +714,7 @@ inline用于定义内联函数。
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
+    Posted by zwLin on
     2022-07-04
   </p>
   <div class="tags">
@@ -691,7 +759,7 @@ inline用于定义内联函数。
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
+    Posted by zwLin on
     2022-07-03
   </p>
   <div class="tags">
@@ -730,51 +798,12 @@ struct 结构体
   </a>
   
   <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
+    Posted by zwLin on
     2022-06-20
   </p>
   <div class="tags">
     
     <a href="/tags/#struct union enum" title="struct union enum">struct union enum</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/Hexo-Theme-LiveMyLife/">
-    <h2 class="post-title">
-      Hexo-Theme-LiveMyLife
-    </h2>
-    <h3 class="post-subtitle">
-      A succinct hexo theme...
-    </h3>
-    <div class="post-content-preview">
-      
-移植 Hux Blog 的主题，感谢 Huxpro 设计了如此完美的主题。
-由 Vincent 创建的 LiveMyLife 的主题修改来源 YenYuHsuan，参考主题 dusign、Utone，感谢 dusign、Utone。
-
-仓库
-Github 仓库地址：https://github.com/V-Vincen/hexo-theme-livemylife
-Gitee 仓库地址：ht......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by zw on
-    2020-04-17
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife">Hexo-Theme-LiveMyLife</a>
     
   </div>
   
@@ -826,10 +855,6 @@ Gitee 仓库地址：ht......
   <div class="tags">
     
     
-    <a href="/tags/#Hexo-Theme-LiveMyLife" title="Hexo-Theme-LiveMyLife" rel="1">Hexo-Theme-LiveMyLife</a>
-    
-    
-    
     <a href="/tags/#struct union enum" title="struct union enum" rel="1">struct union enum</a>
     
     
@@ -853,6 +878,14 @@ Gitee 仓库地址：ht......
     <a href="/tags/#抽象类" title="抽象类" rel="1">抽象类</a>
     
     
+    
+    <a href="/tags/#字节对齐" title="字节对齐" rel="1">字节对齐</a>
+    
+    
+    
+    <a href="/tags/#enum 枚举" title="enum 枚举" rel="1">enum 枚举</a>
+    
+    
   </div>
 </section>
 
@@ -871,7 +904,7 @@ Gitee 仓库地址：ht......
     
 
     
-    <p>Fat people have no future, either thin or die...</p>
+    <p>Hope for no more coding...</p>
     
 
     <!-- SNS Link -->
@@ -880,7 +913,7 @@ Gitee 仓库地址：ht......
 
       
       <li>
-        <a target="_blank" href="https://github.com/V-Vincen">
+        <a target="_blank" href="https://github.com/zwe1in">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -890,26 +923,6 @@ Gitee 仓库地址：ht......
       
 
       
-      <li>
-        <a target="_blank" href="https://twitter.com/V_Vincen_">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-      <li>
-        <a target="_blank" href="https://www.instagram.com/v_vincen_">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
 
       
 
@@ -918,14 +931,7 @@ Gitee 仓库地址：ht......
       
 
       
-      <li>
-        <a target="_blank" href="http://weibo.com/WVincen">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
+
       
 
     </ul>
@@ -940,8 +946,16 @@ Gitee 仓库地址：ht......
 <div class="widget">
   <ul>
     
+    <a href="enum/">
+      <li>enum 枚举</li>
+    </a>
+    
     <a href="FileIO/">
       <li>文件I/O Linux</li>
+    </a>
+    
+    <a href="byteAlignas/">
+      <li>字节对齐</li>
     </a>
     
     <a href="virtual/">
@@ -950,14 +964,6 @@ Gitee 仓库地址：ht......
     
     <a href="static/">
       <li>static 关键字</li>
-    </a>
-    
-    <a href="inline/">
-      <li>inline 关键字</li>
-    </a>
-    
-    <a href="const/">
-      <li>const 关键字</li>
     </a>
     
   </ul>
@@ -988,7 +994,7 @@ Gitee 仓库地址：ht......
 
 <h5><a href="/archives/">archives</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/07/">July 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2020/04/">April 2020</a><span class="archive-list-count">1</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/08/">August 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/07/">July 2022</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li></ul>
 </div>
 
 
@@ -999,10 +1005,6 @@ Gitee 仓库地址：ht......
 <h5><a href="/categories/">categories</a></h5>
 <div class="widget">
   <ul>
-    
-    <a href="/categories/#Hexo-Theme-LiveMyLife">
-      <li>Hexo-Theme-LiveMyLife</li>
-    </a>
     
     <a href="/categories/#c++">
       <li>c++</li>
@@ -1033,7 +1035,7 @@ Gitee 仓库地址：ht......
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/zwe1in">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -1043,26 +1045,6 @@ Gitee 仓库地址：ht......
           
 
           
-            <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          
-
-          
-            <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          
 
           
 
@@ -1071,20 +1053,13 @@ Gitee 仓库地址：ht......
           
 
           
-            <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
+
           
 
         </ul>
         <p class="copyright text-muted">
           Copyright &copy;
-          zw
+          zwLin
           2022
           <br>
           Theme by
